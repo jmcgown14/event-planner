@@ -36,6 +36,39 @@ $(function () {
 var time = (dayjs().format('dddd, MMMM D'));
 document.getElementById("currentTime").innerHTML = time
 
+$(function updateHour(){
+  var currentHour = dayjs().hour()
+})
+
+// function bkGround() {
+//   bkGroundColor = document.getElementById('#hour-9');
+// if (bkGroundColor === time) {
+//   $('#hou-9').css("present");
+// } else if ('#hour-9' < time){
+//   $('#hou-9').css("past");
+// } else ('hour-p' > time){
+//   $('#hou-9').css('future');
+// }
+// }
+// Changes the stying of each time block for past, present, and future
+
+$('.timeblock').each(function(){
+  var hourBlock = parseInt($(this).attr('id'));
+  if (time === hourBlock){
+    $(this).removeclass("past")
+    $(this).removeclass("future")
+    $(this).addclass("present")
+  } esle if (time < hourBlock){
+    $(this).addclass("past")
+    $(this).removeclass("future")
+    $(this).removeclass("present")
+  } else {
+    $(this).removeclass("past")
+    $(this).addclass("future")
+    $(this).removeclass("present")
+  }
+})
+
 
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
@@ -43,20 +76,6 @@ document.getElementById("currentTime").innerHTML = time
     // remove static past, present, future clases
     // find a way to progomatically (function) add or remove the appropriate class
     // NOTE: colors need to shift at the START of a new hour
-
-
-
-
-function bkGround() {
-  bkGroundColor = document.getElementById('#hour-9');
-if (bkGroundColor === time) {
-  $('#hou-9').css("present");
-} else if ('#hour-9' < time){
-  $('#hou-9').css("past");
-} else ('hour-p' > time){
-  $('#hou-9').css('future');
-}
-}
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
