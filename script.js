@@ -33,32 +33,43 @@
         // set the format
       // Set the current time to an element in the Html
 
-var currentDate = (dayjs().format('dddd, MMMM D'));
+
+
+
+$(document).ready(function) {
+
+  // Save Button Click
+  document.getElementsByClassName("saveBtn").addEventListener('click', function() {
+
+  // next are steps of saving the individual text in the boxes and how to associate that correctly in local storage to the correct box
+  var info = document.getElementsByClassName('description');
+  var timeID = document.getElementById('');
+
+  },
+
+
+  //what to use with .getitem to pull from local stogare?
+
+
+
+
+
+
+var currentDate = (dayjs().format('ddd, MMMM D'));
 document.getElementById("currentDate").innerHTML = currentDate;
 
+// How do I make this a 24 hour clock?
 $(function updateHour(){
   var currentHour = dayjs().hour()
 })
 
-// function bkGround() {
-//   bkGroundColor = document.getElementById('#hour-9');
-// if (bkGroundColor === time) {
-//   $('#hou-9').css("present");
-// } else if ('#hour-9' < time){
-//   $('#hou-9').css("past");
-// } else ('hour-p' > time){
-//   $('#hou-9').css('future');
-// }
-// }
-// Changes the stying of each time block for past, present, and future
-
 $('.timeblock').each(function(){
-  var hourBlock = parseInt($(this).attr('id'));
-  if (time === hourBlock){
+  var timeSlot = parseInt($(this).attr('id'));
+  if (currentHour === timeSlot){
     $(this).removeclass("past")
     $(this).removeclass("future")
     $(this).addclass("present")
-  } else if (time < hourBlock){
+  } else if (currentHour > timeSlot){
     $(this).addclass("past")
     $(this).removeclass("future")
     $(this).removeclass("present")
@@ -68,7 +79,7 @@ $('.timeblock').each(function(){
     $(this).removeclass("present")
   }
 })
-
+}
 
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
