@@ -32,7 +32,9 @@ $(function () {
       // got to the Docs
         // set the format
       // Set the current time to an element in the Html
-    
+
+var time = (dayjs().format('dddd, MMMM D'));
+document.getElementById("currentTime").innerHTML = time
 
 
 // WHEN I scroll down
@@ -43,6 +45,18 @@ $(function () {
     // NOTE: colors need to shift at the START of a new hour
 
 
+
+
+function bkGround() {
+  bkGroundColor = document.getElementById('#hour-9');
+if (bkGroundColor === time) {
+  $('#hou-9').css("present");
+} else if ('#hour-9' < time){
+  $('#hou-9').css("past");
+} else ('hour-p' > time){
+  $('#hou-9').css('future');
+}
+}
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
