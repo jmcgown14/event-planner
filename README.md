@@ -9,7 +9,7 @@ When you click into a timeblock then you can enter an event
 When you click the save button for that timeblock then the text for that event is saved in local storage
 When you refresh the page then the saved events persist
 
-~Work in colaboration with Katherine Reiner~
+Work in colaboration with Katherine Reiner.
 
 [Project Link](https://jmcgown14.github.io/event-planner/)
 
